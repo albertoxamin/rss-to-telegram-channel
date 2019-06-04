@@ -1,0 +1,24 @@
+{
+  "name": "rss-to-telegram-channel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertoxamin/rss-to-telegram-channel.git"
+  },
+  "author": "Alberto Xamin (c)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albertoxamin/rss-to-telegram-channel/issues"
+  },
+  "homepage": "https://github.com/albertoxamin/rss-to-telegram-channel#readme",
+  "dependencies": {
+    "rss-parser": "^3.7.1",
+    "telegraf": "^3.30.1"
+  }
+}
