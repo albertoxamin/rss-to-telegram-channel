@@ -1,10 +1,10 @@
 const { Telegram } = require('telegraf')
 const Parser = require('rss-parser')
+const fs = require('fs')
 
 const telegram = new Telegram(process.env.TG)
 
 let parser = new Parser()
-let lastDate
 
 const GetInstantView = (link) => `https://t.me/iv?url=${link}&rhash=${process.env.IV_HASH}`
 const GetLinks = (feedUrl) => {
@@ -12,6 +12,7 @@ const GetLinks = (feedUrl) => {
 		if (err) {
 			return console.log(err)
 		}
+		var lastDate = (fs.existsSync('lastCheck.txt')) ? Date(fs.readFileSync('lastCheck.txt').toString()) : undefined
 		feed.items.forEach(function (entry) {
 			let m
 			if (lastDate == undefined || new Date(entry.isoDate) > lastDate) {
@@ -19,7 +20,7 @@ const GetLinks = (feedUrl) => {
 				PostNews(entry.link)
 			}
 		})
-		lastDate = new Date()
+		fs.writeFileSync('lastCheck.txt', Date.now())
 	})
 }
 
