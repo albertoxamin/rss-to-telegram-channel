@@ -12,7 +12,7 @@ const GetLinks = (feedUrl) => {
 		if (err) {
 			return console.log(err)
 		}
-		var lastDate = (fs.existsSync('lastCheck.txt')) ? Date(fs.readFileSync('lastCheck.txt').toString()) : undefined
+		var lastDate = (fs.existsSync('lastCheck.txt')) ? new Date(fs.readFileSync('lastCheck.txt').toString()) : undefined
 		feed.items.forEach(function (entry) {
 			let m
 			if (lastDate == undefined || new Date(entry.isoDate) > lastDate) {
