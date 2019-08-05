@@ -28,7 +28,7 @@ const GetLinks = (feedUrl) => {
 }
 
 const PostNews = (link) => {
-	telegram.sendMessage(process.env.CHANNEL_ID, `[${link}](${GetInstantView(link)})`, Object.assign({ 'parse_mode': 'Markdown' }))
+	telegram.sendMessage(process.env.CHANNEL_ID, `[!](${GetInstantView(link)}) ${link}`, Object.assign({ 'parse_mode': 'Markdown' }))
 		.then(message => {
 			console.log(`[${new Date().toUTCString()}] Posted ${link}`)
 		}).catch(err => console.error(err))
