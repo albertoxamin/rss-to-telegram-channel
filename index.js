@@ -9,7 +9,7 @@ let parser = new Parser()
 if (!fs.existsSync('lastCheck.txt'))
 	fs.writeFileSync('lastCheck.txt', process.env.STARTING_DATE)
 
-const GetInstantView = (link) => `https://t.me/iv?url=${link}&rhash=${process.env.IV_HASH}`
+const GetInstantView = (link) => process.env.IV_HASH ? `https://t.me/iv?url=${link}&rhash=${process.env.IV_HASH}` : link
 const GetLinks = (feedUrl) => {
 	parser.parseURL(feedUrl, function (err, feed) {
 		if (err) {
@@ -28,7 +28,7 @@ const GetLinks = (feedUrl) => {
 }
 
 const PostNews = (link) => {
-	telegram.sendMessage(process.env.CHANNEL_ID, `[!](${GetInstantView(link)}) ${link}`, Object.assign({ 'parse_mode': 'Markdown' }))
+	telegram.sendMessage(process.env.CHANNEL_ID, `[️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️](${GetInstantView(link)}) ${link}`, Object.assign({ 'parse_mode': 'Markdown' }))
 		.then(message => {
 			console.log(`[${new Date().toUTCString()}] Posted ${link}`)
 		}).catch(err => console.error(err))
