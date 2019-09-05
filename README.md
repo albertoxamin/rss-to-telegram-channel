@@ -2,8 +2,8 @@
 
 ## Enviroment variables:
 ```
-TG=botfathertoken
-IV_HASH=rhash for telegram iv
+TG=botfather_token
+IV_HASH=rhash for telegram iv (not required)
 CHANNEL_ID=telegram channel id or username
 RSS_URL=feed to fetch posts
 ```
@@ -21,5 +21,6 @@ docker run --name RSS-TG-BOT -d -e TG=botfathertoken \
 ## Channels powered by this repo
 
 * https://t.me/blogunity3d
+* https://t.me/ladigeit
 
 Did you use this bot for your channel? Submit a pull request to add your channel!
