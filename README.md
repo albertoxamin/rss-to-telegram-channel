@@ -1,4 +1,6 @@
 # RSS to telegram channel
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/albertoxamin/rss-to-telegram-channel)
+![Docker Pulls](https://img.shields.io/docker/pulls/albertoxamin/rss-to-telegram-channel)
 
 ## Enviroment variables:
 ```
@@ -24,3 +26,4 @@ docker run --name RSS-TG-BOT -d -e TG=botfathertoken \
 * https://t.me/ladigeit
 
 Did you use this bot for your channel? Submit a pull request to add your channel!
+!
