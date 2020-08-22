@@ -5,6 +5,7 @@ const fs = require('fs')
 const telegram = new Telegram(process.env.TG)
 
 let parser = new Parser()
+let lastLink = ''
 
 if (!fs.existsSync('lastCheck.txt'))
 	fs.writeFileSync('lastCheck.txt', process.env.STARTING_DATE)
@@ -18,8 +19,9 @@ const GetLinks = (feedUrl) => {
 		var lastDate = (fs.existsSync('lastCheck.txt')) ? new Date(parseInt(fs.readFileSync('lastCheck.txt').toString())) : undefined
 		feed.items.forEach(function (entry) {
 			let m
-			if (lastDate == undefined || new Date(entry.isoDate) > lastDate) {
+			if ((lastDate == undefined || new Date(entry.isoDate) > lastDate) && lastLink !== entry.link) {
 				console.log(`[${entry.isoDate}] ${entry.link}`)
+				lastLink = entry.link
 				PostNews(entry.link)
 			}
 		})
