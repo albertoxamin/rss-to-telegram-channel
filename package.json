@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/albertoxamin/rss-to-telegram-channel#readme",
   "dependencies": {
-    "rss-parser": "^3.7.1",
-    "telegraf": "^3.30.1"
+    "rss-parser": "^3.11.0",
+    "telegraf": "^4.0.3"
   }
 }

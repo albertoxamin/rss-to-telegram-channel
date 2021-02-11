@@ -2,12 +2,15 @@
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/albertoxamin/rss-to-telegram-channel)
 ![Docker Pulls](https://img.shields.io/docker/pulls/albertoxamin/rss-to-telegram-channel)
 
+This simple bot allows you to post rss items to a telegram channel. It also support custom instant view templates (https://instantview.telegram.org/)
+
 ## Enviroment variables:
 ```
 TG=botfather_token
 IV_HASH=rhash for telegram iv (not required)
 CHANNEL_ID=telegram channel id or username
 RSS_URL=feed to fetch posts
+UPDATE_INTERVAL=number in minutes (default 60 minutes)
 ```
 
 
