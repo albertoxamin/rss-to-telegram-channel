@@ -1,4 +1,4 @@
-const updateInterval = process.env.UPDATE_INTERVAL ?? 60
+const updateInterval = process.env.UPDATE_INTERVAL ? process.env.UPDATE_INTERVAL : 60;
 const { Telegram } = require('telegraf')
 const Parser = require('rss-parser')
 const fs = require('fs')
