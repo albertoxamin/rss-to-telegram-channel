@@ -62,10 +62,10 @@ const GetLinks = (feedUrl) => {
 }
 
 const PostNews = (link) => {
-	// telegram.sendMessage(process.env.CHANNEL_ID, GetMessage(link), Object.assign({ 'parse_mode': 'Markdown' }))
-	// 	.then(message => {
-	// 		console.log(`[${new Date().toUTCString()}] Posted ${link}`)
-	// 	}).catch(err => console.error(err))
+  telegram.sendMessage(process.env.CHANNEL_ID, GetMessage(link), Object.assign({ 'parse_mode': 'Markdown' }))
+	 	.then(message => {
+	 		console.log(`[${new Date().toUTCString()}] Posted ${link}`)
+	 	}).catch(err => console.error(err))
 }
 
 const FetchPosts = () => {
