@@ -25,6 +25,8 @@ const Parse = (feedUrl, lastDate) => {
 			feed.items.forEach(function (entry) {
 				let m
 				// console.log(`${new Date(entry.isoDate)} > ${lastDate} --> ${new Date(entry.isoDate) > lastDate}`)
+				if (!entry.isoDate && entry.pubDate)
+					entry.isoDate = Date.parse(entry.pubDate.replace("CET",""))
 				if ((lastDate == undefined || new Date(entry.isoDate) > lastDate) && lastLinks.indexOf(entry.link) === -1) {
 					console.log(`[${entry.isoDate}] ${entry.link}`)
 					lastLinks.push(entry.link)
